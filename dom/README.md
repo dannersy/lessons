@@ -10,10 +10,11 @@
 - Select elements by id and class
 - Changing a node's properties
 - Getters VS Setters
+- AT SOME POINT, when it feels right, tie in Thurs concepts to DOM manipulation.
 
 ## Review/Warmup:
 
-Wait for Taq's class on Thursday to populate....(loops?)
+Wait for Taq's class on Thursday to populate....(loops? Yeah... loops)
 
 ---
 
@@ -120,6 +121,8 @@ var allTheLis = document.querySelectorAll('li') // get all the li tags on the pa
 var allTheLisPs = document.querySelectorAll('li, p') // get all the li & p tags
 ```
 
+**SO!** If you've done this before, you might say, "Hey aren't there other selectors like .getElementById or .getElementsByClassName?" And I'll reply, "Yes there are, but they suck, so just use querySelector."  If you like them better, that's fine, we'll touch on them briefly and go over their caveats.
+
 ---
 
 ### `.innerText` and `.innerHTML`
@@ -205,9 +208,9 @@ This, unfortunately, is the proper way to add text without a framework. Especial
 ### Manipulating DOM elements: getting, creating & deleting
 Let's 'get' some elements a few different ways aside from `.querySelector()`:
 - `const ulLessonList = document.getElementById('lesson-list');` // get the UL by ID
-- `const allLis = document.getElementsByClassName('list-item');` // get all the lis by class name
-- `const allLiTags = document.getElementsByTagName('li');` // get all lis by HTML tag
-- `const firstListItemByID = document.getElementById('accessing');` // get the 1st li
+- `const allLis = document.getElementsByClassName('list-item');` // get **all** the lis by class name
+- `const allLiTags = document.getElementsByTagName('li');` // get **all** lis by HTML tag
+- `const firstListItemByID = document.getElementById('accessing');` // get the **1st** li
 - `const firstLiChild = document.getElementById('lesson-list').childNodes[1];` // returns first child of given ID
 - `const firstLiByQuery = document.querySelector('#accessing');` // returns the first matching element
 
