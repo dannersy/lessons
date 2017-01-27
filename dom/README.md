@@ -74,7 +74,7 @@ document.querySelector('h1')
 
 ```
 
-This format looks awfully familiar lets talk about it:
+This format looks awfully familiar... lets talk about it:
 - `document` is an object!
 - `querySelector()` is a function (method)!
 - `<h1>` is a tag.
