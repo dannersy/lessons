@@ -14,7 +14,20 @@
 
 ## Review/Warmup:
 
-Wait for Taq's class on Thursday to populate....(loops? Yeah... loops)
+
+Remember to reference **[Terminal Tutor](https://github.com/mottaquikarim/TerminalTutor)** as needed.
+
+**ALL IN TERMINAL**:
+
+1. **Create** a new folder in your desktop.
+2.  **Create** an index.js file
+3. **Create** an index.html file with some text, and use
+  `<script>` to link your JS at the bottom of your body
+4. **Create** a styles folder
+5. **Add** empty main.css
+6. **Initialize** git in this directory
+7. **Create repo** in GitHub
+8. **Push** repo to Github
 
 ---
 
@@ -66,7 +79,7 @@ Keep the above in mind. Now lets talk about selectors:
 - [MDN document.querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
 - [MDN  document.querySelectorAll()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
 
-Here is a line of Javascripts...
+Here is a line of Javascript...
 
 ```js
 
@@ -121,7 +134,7 @@ var allTheLis = document.querySelectorAll('li') // get all the li tags on the pa
 var allTheLisPs = document.querySelectorAll('li, p') // get all the li & p tags
 ```
 
-**SO!** If you've done this before, you might say, "Hey aren't there other selectors like .getElementById or .getElementsByClassName?" And I'll reply, "Yes there are, but they suck, so just use querySelector."  If you like them better, that's fine, we'll touch on them briefly and go over their caveats.
+**SO!** If you've done this before, you might say, "Hey aren't there other selectors like .getElementById or .getElementsByClassName?" And I'll reply, "Yes there are, but they suck, so just use querySelector."  If you like them better, that's fine, we'll touch on them briefly in demonstration and go over their caveats.
 
 ---
 
@@ -204,15 +217,14 @@ newP.appendChild(newText);
 This, unfortunately, is the proper way to add text without a framework. Especially if your user is interacting with the site and text should change as a result of it. Seems tiresome right? Well, we need to just understand vanilla DOM manipulation and we'll get to shortcuts super soon....promise.
 
 ---
-### Exercise(separate file/needs completion/perhaps let students walk through):
+### Exercise:
 ### Manipulating DOM elements: getting, creating & deleting
 Let's 'get' some elements a few different ways aside from `.querySelector()`:
-- `const ulLessonList = document.getElementById('lesson-list');` // get the UL by ID
-- `const allLis = document.getElementsByClassName('list-item');` // get **all** the lis by class name
-- `const allLiTags = document.getElementsByTagName('li');` // get **all** lis by HTML tag
-- `const firstListItemByID = document.getElementById('accessing');` // get the **1st** li
-- `const firstLiChild = document.getElementById('lesson-list').childNodes[1];` // returns first child of given ID
-- `const firstLiByQuery = document.querySelector('#accessing');` // returns the first matching element
+- `const ulLessonList = document.querySelector('#list');` // get the UL by ID
+- `const allLis = document.querySelectorAll('.list-item');` // get **all** the lis by class name
+- `const allLiTags = document.querySelectorAll('li');` // get **all** lis by HTML tag
+- `const firstListItemByID = document.querySelector('li');` // get the **1st** li
+- `const firstLiChild = document.querySelector('#list').childNodes[1];` // returns first child of given ID
 
 Now let's play with this `<li>`
 - `firstListItemByID.innerHTML = "Hello, I'm new text."` // change inner html
@@ -224,7 +236,7 @@ Let's add some elements
 - `newLi.innerHTML = "Hello, I'm new here."` // add some text
 - `newLi.classList.add('new-li');` // add class
 - `const newNewLi = document.createElement("li");` // create element 2
-- `const ulEl = document.getElementById('lesson-list');` // get the parent node
+- `const ulEl = document.querySelector('#list');` // get the parent node
 - `ulEl.insertBefore(newNewLi, firstListItemByID);` // insert the new LI before the 1st LI
 - `newNewLi.innerHTML = "Hello, I'm first here."` // add some text
 
@@ -234,9 +246,11 @@ Now let's remove them
 - `document.body.removeChild(newNewLi);` // remove the el ==> xxxx!
 - `ulEl.removeChild(newNewLi);` // remove the el!
 
+Check these out, if they don't make sense, let's practice our researching skills and let's hit up MDN:
+
 Hierarchical relationships
-- `.children`
-- `.childNodes` // text nodes too
+- `.children` // Gives children elements
+- `.childNodes` // Gives children elements and text nodes too
 - `.nextSibling`
 - `.parentElement`
 - `.parentNode`
