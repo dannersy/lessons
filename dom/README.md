@@ -1,16 +1,15 @@
 ## Agenda:
 
-- Warmup: 5 mins per problem
+- Warmup: 5 mins
 - Review
 - What is the DOM?
 - What does it mean to us and why is it useful?
 - Differences between ELEMENTS and TEXT NODES
 - Create, append & remove elements
-- Get, traverse & manipulate elements
-- Select elements by id and class
-- Changing a node's properties
+- Get, traverse & manipulate element
 - Getters VS Setters
 - AT SOME POINT, when it feels right, tie in Thurs concepts to DOM manipulation.
+- Event listeners
 
 ## Review/Warmup:
 
@@ -217,7 +216,19 @@ newP.appendChild(newText);
 This, unfortunately, is the proper way to add text without a framework. Especially if your user is interacting with the site and text should change as a result of it. Seems tiresome right? Well, we need to just understand vanilla DOM manipulation and we'll get to shortcuts super soon....promise.
 
 ---
-### Exercise:
+### Lab:
+
+Copy the following HTML in your own `index.html`:
+[Sample HTML](https://github.com/dannersy/lessons/blob/master/dom/exercise/index.html)
+
+Don't forget to create your own `.js` and link it to your HTML. Don't worry about CSS, because you can add it via Javascript as part of the exercise.
+
+Run through the following commands in your own JS, notice how your selector arguments will be different.
+
+Refresh the page to see changes and `console.log()` often!
+
+Get as far as you can, be as creative as you like. If you're ahead, check your neighbor and help out! Nothing reaffirms what you know better than explaining it to someone else!!
+
 ### Manipulating DOM elements: getting, creating & deleting
 Let's 'get' some elements a few different ways aside from `.querySelector()`:
 - `const ulLessonList = document.querySelector('#list');` // get the UL by ID
@@ -262,7 +273,197 @@ Examples of hierarchical relationships:
 
 ---
 
+# dare we continue.... Event Listeners
+
+You're all champions. Let's ramp it up a little and intro event listeners.
+
+## What is an event?
+
+- A user **clicks** a button
+- A user **hovers** over an element
+- A user **presses** a key on the keyboard
+- A user **scrolls** the page
+- A user **resizes** the window
+
+
+There are so many events! Check the bottom of this markdown for more.
+
+
+Not all events are evoked by users. There are other events, such as `DOMContentLoaded`, that have nothing to do with user interaction. This event detects when the HTML in your `document` is done loading. This is useful if you're not sure your JS file is running.
+
+How do events work?
+
+When an event occurs (a user clicked a button), a specified function will run.
+
+The key here is that the function will only run **after the event occurs**. Perhaps you may have guessed it already, but these are **callback** functions. The code that happens after the event is up to you... it can be anything JS can do.
+
+## Neat, so how do we use them?
+
+An `event handler` can be attached to an HTML element.
+
+Wat?
+
+Consider the following:
+
+When a user clicks a button, I would like to turn the background color of the body blue.
+
+```html
+<button>Just a button.</button>  
+```  
+
+Then in my JS file, I need to first use a selector to an element and then attach an `event listener` to the button.
+
+```js
+// first grab the element:
+const theButton = document.querySelector('button');
+
+// then attach the event listener:
+theButton.addEventListener('click', function() {
+  console.log("You've clicked the button!");
+
+  document.body.style.backgroundColor = "blue";
+});
+```
+
+How do you think we can use our DOM manipulation and events in relation to Thursday's lesson on using APIs and retrieving data?
+
+### Other types of events
+
+### Hover
+
+`mouseenter` & `mouseleave`
+
+```js
+var theDiv = document.querySelector('div');
+
+function divHasBeenHovered(event){
+  this.style.color = 'red';
+}
+
+function divHasBeenUnHovered() {
+  this.style.color = 'green';
+}
+
+theDiv.addEventListener('mouseenter', divHasBeenHovered);
+theDiv.addEventListener('mouseleave', divHasBeenUnHovered);
+```
+
+---
+
+
+### When a key is pressed
+
+[Excellent resource from CSS Tricks](https://css-tricks.com/snippets/javascript/javascript-s/).
+
+`keydown`
+
+This event listener goes on the document.
+
+Check the above resource for key codes.
+
+
+```js
+document.addEventListener("keydown", function(event) {
+  console.log(event.which);
+});
+```
+
+
+---
+
+
+### Scroll
+
+This event attaches to the `window`.
+
+Careful. Scroll events fire at a high rate.
+
+```js
+window.addEventListener('scroll', function(ev) {
+  console.log("scrolling!");
+});
+```
+
+---
+
+
+### Toggling
+
+Remember our button that turns our body's background color to blue?
+
+What if when we reload the page we want to press it & turn the body blue, but then press the button again and turn the body green, then press again and turn it blue, then green...  
+
+Take 60 seconds and think about a way you could solve this problem. No coding! Just thinking!
+
+---
+
+### Prevent default
+
+Inside of the callback fxn you have access to the `event` object. It is automatically passed in as a parameter.
+
+```html
+<a href="http://www.google.com">Link</a>
+```
+
+An `<a>` tag will automatically take me to wherever the `href` attribute specifies. But what if I want to use an `a` tag, but want to specify my own action?
+
+User `event.preventDefault();`.
+
+```js
+document.querySelector('a').addEventListener('click', function(event) {
+  event.preventDefault();
+  console.log('a has been clicked. Now I can do my own action');
+});
+```
+
+---
+
+
+### Access to the 'event' and removing a listener from an element
+
+
+[MDN docks for `.removeEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener).
+
+`.removeEventListener( typeOfListener, nameOfCallbackFxn );`
+
+**Type of listener:** such as 'click'
+
+**Name of the cb fxn:** The cb that runs when 'click' occurs
+
+Example:
+
+When you click the `<a>`, it will log something, then remove the event listener from the element. The second time you click `<a>`, it takes you to google.
+
+```html
+<a href="http://www.google.com">Link</a>
+```
+
+```js
+const theA = document.querySelector('a');
+
+function aHasBeenClicked(event){
+  event.preventDefault();
+  console.log('a has been clicked.');
+
+  this.removeEventListener('click', aHasBeenClicked );
+}
+
+theA.addEventListener('click', aHasBeenClicked);
+```
+What do we know about `this` and what is it references in this example? `console.log()` it if you're not sure.
+
+When the event handler is invoked, the `this` keyword inside the handler is set to the DOM element on which the handler is attached.
+
+
+## Exercise:
+
+Using our HTMl and Javascript from before try this:
+
+- Create an event listener for a click on an element of your choosing. Make it change the color and size CSS, as well as the text content of a separate element.
+- Create an event listener with a `'keydown'` of your choosing that makes an element disappear.
 
 ### Extra DOM Resources:
 - [What is the DOM?](https://css-tricks.com/dom/)
 - [Most Common DOM Methods](https://christianheilmann.com/stuff/JavaScript-DOM-Cheatsheet.pdf)
+- [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/Events)
+- [Keycode Article for 'keydown'](https://css-tricks.com/snippets/javascript/javascript-s/).
