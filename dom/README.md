@@ -466,4 +466,4 @@ Using our HTMl and Javascript from before try this:
 - [What is the DOM?](https://css-tricks.com/dom/)
 - [Most Common DOM Methods](https://christianheilmann.com/stuff/JavaScript-DOM-Cheatsheet.pdf)
 - [Event Listeners](https://developer.mozilla.org/en-US/docs/Web/Events)
-- [Keycode Article for 'keydown'](https://css-tricks.com/snippets/javascript/javascript-s/).
+- [Keycode Article for 'keydown'](https://css-tricks.com/snippets/javascript/javascript-keycodes/).
