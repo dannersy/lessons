@@ -13,15 +13,16 @@
 
 Increment/Decrement Buttons!
 
+Resource:
 [DOM Lesson](https://github.com/dannersy/lessons/blob/master/dom/README.md)
 
-**ALL**:
+**ALL** Create two buttons that will increment or decrement a number on our page using "Up" and "Down" buttons:
 
 1. **Create** a new folder in your desktop.
 2.  **Create** an index.js file
 3. **Create** an index.html file with some text, and use
   `<script>` to link your JS at the bottom of your body
-4. **Add** an `<input value="0" />` to your HTML
+4. **Add** an `<input value="0" />` to your HTML (this is what will increment/decrement)
 5. **Create** two buttons that will represent "Up" and "Down"
 6. **Get** your buttons with selectors in Javascript and add click event listeners
 7. **Write** Javascript in the event callback function that will increment or decrement the input value via your buttons.
