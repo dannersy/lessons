@@ -1,7 +1,7 @@
 # Agenda:
 
 - Warm-up
-- Review
+- Review warm-up
 - What are loops and why do we need 'em?
 - Iterate over "objects" using count controlled loop (`for`)
 - Iterate using condition-controlled loops (`while`)
@@ -11,7 +11,20 @@
 
 # Warmup:
 
-How did Sunday go? Write warmup based on that....
+Increment/Decrement Buttons!
+
+[DOM Lesson](https://github.com/dannersy/lessons/blob/master/dom/README.md)
+
+**ALL**:
+
+1. **Create** a new folder in your desktop.
+2.  **Create** an index.js file
+3. **Create** an index.html file with some text, and use
+  `<script>` to link your JS at the bottom of your body
+4. **Add** an `<input value="0" />` to your HTML
+5. **Create** two buttons that will represent "Up" and "Down"
+6. **Get** your buttons with selectors in Javascript and add click event listeners
+7. **Write** Javascript in the event callback function that will increment or decrement the input value via your buttons.
 
 
 # Loops:
@@ -228,7 +241,4 @@ Look up the following:
 - `.map()` [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 - `.filter()` [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 
-And then try to apply them to the problems above. Taq will be covering these eventually.
-
-
-## Resources:
+And then try to apply them to the problems above. Taq will be covering these eventually. By the way, they're super awesome.
