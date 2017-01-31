@@ -56,3 +56,30 @@ document.addEventListener("keydown", function(event) {
 window.addEventListener('scroll', function(ev) {
   console.log("scrolling!");
 });
+
+const simpleH2 = document.querySelector('.simple');
+
+// simpleH2.addEventListener('click', function(){
+//   simpleH2.style.display = "none"
+// })
+//
+// grab our h2 element by class and make it disappear
+//
+
+
+document.addEventListener('keydown', function(event){
+  // console.log(event.which);
+  if (event.which === 81){
+    // if "q" which is code 81 then....
+    if (simpleH2.style.display === "block"){
+      // if style.display equals "block" then...
+      simpleH2.style.display = "none";
+      // set display to none...
+    } else {
+      //or
+      simpleH2.style.display = "block";
+      // set the style of our element to "block"
+    }
+
+  }
+});
