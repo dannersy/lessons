@@ -5,7 +5,7 @@
 	 * Keep in mind these concepts from last class:
 	 * 	 - using ajax to make an api call
 	 * 	 - using query parameters
-	 * 	 - asynchronous javascript
+	 * 	 - asynchronous javascript (callbacks)
 	 *
 	 *
 	 * We'll start by trying out OMDBI,
@@ -30,7 +30,7 @@
 	/* Cool. Now following a similar format,
 	 * Make another call and get info for the movie 'Titanic'(1997)
 	 * and print the names of the actors.
-	 * Hint: (Use base url and params ie. ?=)
+	 * Hint: (Use base url and params)
 	 */
 
 	// ------------------------------------------------------------
@@ -45,7 +45,8 @@
 	   * Use your function to generate urls for 'the eternal sunshine of the spotless mind' and
 	   * 'Hostel' and 'Mrs. Doubtfire'.
 	   * Make sure it works for all those movies(don't get tripped up by spaces),
-	   * Then console.log out each director.
+		 * Use the function as the first argument of your AJAX GET
+	   * Then console.log out each director in the callback
 	   */
 	// ------------------------------------------------------------
 	// PROBLEM 4:
@@ -69,6 +70,8 @@
 	/*
 	 * Console.log which movie came out first: Frenzy, Psycho or The Birds.
 	 * Once again remember that these calls are all running simultaneously.
+	 * Hint: the property "Year" has a value that is a string "2017", but we don't
+	 * want to compare strings, right?
 	 */
 	 let birdsYear
 	 let psychoYear

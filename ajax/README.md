@@ -142,8 +142,8 @@ $.get(apiURL, (response) => {
 Yep, essentially two lines of code, but there's a lot going on there. Let's break it down:
 
 - Our CDN script is **BEFORE** our index.js because it needs to run the jQuery JS code before we can use it.
-- `$` is just short for `jQuery`, the idea is that everything is done with one global symbol. Our JS file knows what `$` it because we've included our jQuery CDN script in the HTML.
-- `.get()` used on `$` is short for doing an AJAX `GET` request
+- `$` is just short for `jQuery`, the idea is that everything is done with one global symbol. Our JS file knows what `$` is because we've included our jQuery CDN script in the HTML.
+- `.get()` is a method of `$` and short for doing an AJAX `GET` request
 - `apiURL` in this example is the endpoint or full query to the API
 - `response` as a parameter in our callback will be the data we get back from the API
 
@@ -165,7 +165,7 @@ Alternate syntax to further explain AJAX `GET`:
 The first syntax is what we'll use for the exercises, I just didn't want heads to explode when you find the extended syntax when Googling.
 
 
-## Super Ultra Mega Super Fast API Review
+## Super Ultra Mega Fast API Review
 
 Everyone open up [OMDB](http://www.omdbapi.com/) and lets look at the "Parameters" section.
 
@@ -179,3 +179,17 @@ This will be the response data from our AJAX call in our Javascript file, which 
 
 
 ## Exercise
+
+First, let's all download the files from here: [AJAX PSET](https://github.com/dannersy/AJAX_PSET)
+
+Don't bother touching the HTML or CSS, just work directly in `index.js` and go through all the problems. If you've opened the HTML directly already, you can take note that your CDN has been linked for you.
+
+[Solution](https://github.com/dannersy/lessons/tree/master/ajax/exercise) - *It's not actually pushed yet, this link will be updated after class*
+
+### If you're ahead
+
+Do the BONUS Part 2 with the Giphy API
+
+OR
+
+Research more jQuery to try and tighten up your code. For example, jQuery provides more concise (and fun) ways to manipulate the DOM
