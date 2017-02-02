@@ -104,20 +104,25 @@ Today we are going to use an API to make our HTTP requests to other APIs a bit e
 - Nowadays indicates a set of technologies that allow us to make requests *without* reloading the page
 - How does it work? Server-side requests are sent asynchronously on the client without having to send an actual browser request that would reload the page.
 - The result is a much faster experience.
+
 ---
+
 ### What is jQuery?
 
 - An API/library that extends the functionality of Javascript
 - Only going to be looking at the AJAX method today
 - jQuery offers us so much more! (selectors/effects/events/manipulation/etc....)
 - We'll be adding a CDN script to our HTML to use it.
+
 ---
+
 ### SIGH, fine!...What the hell is a CDN?
 
 - Content Delivery Network
 - An easy way for us to use the jQuery library without downloading it
 - Caveat: must be connected to interwebs for it to work
   - Conversely, if we had **downloaded** the library we would not need to be online for it to work
+
 ---
 
 All that long winded explanation for this:  
@@ -167,7 +172,7 @@ Everyone open up [OMDB](http://www.omdbapi.com/) and lets look at the "Parameter
 For those of you reading at home try entering the base url with added parameters (http://www.omdbapi.com/?t=batman) directly into your address bar in Chrome. See what you get!
 
 We get JSON (JavaScript Object Notation)!
- 
+
 “a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate.” -json.org
 
 This will be the response data from our AJAX call in our Javascript file, which is easily traversable because of loops, and now our page is more dynamic because we are manipulating the DOM with JS based on that data; just like the warmup! **WHEW**. Full circle from Thursday.
