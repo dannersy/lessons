@@ -65,7 +65,7 @@ Why are you cramming more crap into my brain!?!?!:
 - We want you to be comfortable with ES6 (why use `const`/`let` if we aren't learning all ES6 stuffs?)
 - Common when learning/using React in the future
   - Why? It has behavioral advantages that will help us in React - coming soon in a future lesson near you
-- Simpler syntax, making it commonly used in callbacks (Hint: you'll see this in the exercises)
+- Simpler syntax, making it commonly used as callbacks (Hint: you'll see this in the exercises)
 
 Here are some examples using an arrow function on callbacks you may have seen:
 
@@ -186,7 +186,7 @@ Don't bother touching the HTML or CSS, just work directly in `index.js` and go t
 
 [Solution](https://github.com/dannersy/lessons/tree/master/ajax/exercise) - *It's not actually pushed yet, this link will be updated after class*
 
-### If you're ahead
+#### If you're ahead or need extra practice...
 
 Do the BONUS Part 2 with the Giphy API
 
