@@ -50,7 +50,7 @@ search.addEventListener('click', (event) => {
 
 // //-----Interested in jQuery? Comment out the top listener and uncomment this one-----
 // $('button').click(function(){
-// // Instead of storing the button, we can grab it and use it simply with $()
+// // Notice how instead of storing the button, we can just grab it and use it directly with less code with $()
 //   const movieTitle = input.value;
 //   const apiURL = "http://www.omdbapi.com/?t=" + movieTitle;
 //   $.get(apiURL, function(response) {
